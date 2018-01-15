@@ -1,0 +1,9 @@
+- name: Setup bundle_file list.
+  set_fact:
+    _bundle_files: "{{ bundle_files | default(conga_bundle_files) }}"
+
+- name: "Deploy AEM bundle files for role: {{ conga_role }}"
+  include: deploy_bundle_file.yml
+  with_items: "{{ _bundle_files }}"
+  loop_control:
+    loop_var: _bundle_file

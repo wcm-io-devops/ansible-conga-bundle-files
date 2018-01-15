@@ -1,0 +1,15 @@
+# Username and password to use for query bundle api
+conga_bundle_files_aem_user: admin
+conga_bundle_files_aem_password: admin
+
+# Port and package manager service URL of the AEM instance
+conga_bundle_files_aem_port: "{{ conga_config.quickstart.port }}"
+conga_bundle_files_aem_api_prefix: "http://{{ inventory_hostname }}:{{ conga_bundle_files_aem_port }}/system/console/bundles/"
+
+conga_bundle_files_target_dir_prefix: "crx-quickstart/launchpad/felix/bundle"
+conga_bundle_files_target_data_dir: "data"
+
+# Owner, group and mode of the copied files
+#conga_bundle_files_owner:
+#conga_bundle_files_group:
+#conga_bundle_files_mode:
