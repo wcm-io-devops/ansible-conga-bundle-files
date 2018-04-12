@@ -24,6 +24,3 @@ galaxy_info:
 allow_duplicates: yes
 dependencies:
   - conga-facts
-  - { name: aem-service,
-      aem_service_port: "{{ conga_aem_packages_port }}",
-      aem_service_name: "{{ aem_cms_service_name }}" }
