@@ -47,10 +47,7 @@ The subdirectory inside the bundle directory.
 
 This role depends on the
 [conga-facts](https://github.com/wcm-io-devops/ansible-conga-facts) role
-for supplying the list of bundle files to deploy. It also depends on the
-[ansible-aem-service](https://github.com/wcm-io-devops/ansible-aem-service)
-role for ensuring that the target AEM instance is started before calling
-the API.
+for supplying the list of bundle files to deploy.
 
 ## Example
 
