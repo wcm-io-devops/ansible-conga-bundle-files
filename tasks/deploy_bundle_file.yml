@@ -10,6 +10,7 @@
     force_basic_auth: yes
     user: "{{ conga_bundle_files_aem_user }}"
     password: "{{ conga_bundle_files_aem_password }}"
+    timeout: "{{ conga_bundle_files_aem_api_timeout }}"
     return_content: yes
   register: bundle_json
 

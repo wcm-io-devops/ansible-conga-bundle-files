@@ -2,11 +2,17 @@
 conga_bundle_files_aem_user: admin
 conga_bundle_files_aem_password: admin
 
-# Port and package manager service URL of the AEM instance
-conga_bundle_files_aem_port: "{{ conga_config.quickstart.port }}"
-conga_bundle_files_aem_api_prefix: "http://{{ inventory_hostname }}:{{ conga_bundle_files_aem_port }}/system/console/bundles/"
+# The port of the target AEM instance
+conga_bundle_files_aem_port: 4502
+# The prefix of the bundle API call made to retrieve the bundle id and thus the target path where to deploy the file.
+conga_bundle_files_aem_api_prefix: "http://localhost:{{ conga_bundle_files_aem_port }}/system/console/bundles/"
 
+# Timeout in seconds for the AEM api call
+conga_bundle_files_aem_api_timeout: 60
+
+#The prefix of the bundle target path. This value is concatenated with the bundle id retrieved from the bundle API call.
 conga_bundle_files_target_dir_prefix: "crx-quickstart/launchpad/felix/bundle"
+# The subdirectory inside the bundle directory.
 conga_bundle_files_target_data_dir: "data"
 
 # Owner, group and mode of the copied files

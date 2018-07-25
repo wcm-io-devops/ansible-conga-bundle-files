@@ -21,18 +21,22 @@ The username to use for the Bundle API call.
 
 The password to use for the Bundle API call.
 
-    conga_bundle_files_aem_port: "{{ conga_config.quickstart.port }}"
+    conga_bundle_files_aem_port: 4502
 
-The port of the target AEM instance (required). This can be set
+The port of the target AEM instance. This can be set
 explicitly, but the idea is to reuse it from a CONGA role in which the
 port is defined (e.g.
 [`aem-cms`](https://github.com/wcm-io-devops/conga-aem-definitions/blob/develop/conga-aem-definitions/src/main/roles/aem-cms.yaml))
 to make it automatically work for both author and publisher instances.
 
-    conga_bundle_files_aem_api_prefix: "http://{{ inventory_hostname }}:{{ conga_bundle_files_aem_port }}/system/console/bundles/"
+    conga_bundle_files_aem_api_prefix: "http://localhost:{{ conga_bundle_files_aem_port }}/system/console/bundles/"
 
 The prefix of the bundle API call made to retrieve the bundle id and
 thus the target path where to deploy the file.
+
+    conga_bundle_files_aem_api_timeout: 60
+
+Timeout in seconds for the AEM api call
 
     conga_bundle_files_target_dir_prefix: "crx-quickstart/launchpad/felix/bundle"
     
