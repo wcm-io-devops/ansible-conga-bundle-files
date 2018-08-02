@@ -23,4 +23,4 @@ galaxy_info:
 
 allow_duplicates: yes
 dependencies:
-  - conga-facts
+  - wcm-io-devops.conga-facts
