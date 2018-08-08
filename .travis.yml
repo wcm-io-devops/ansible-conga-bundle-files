@@ -6,15 +6,15 @@ python: "2.7"
 # Use the new container infrastructure
 sudo: false
 
-# Install ansible
+# Install pip
 addons:
   apt:
     packages:
     - python-pip
 
 install:
-  # Install ansible
-  - pip install ansible
+  # Install ansible and dependencies
+  - pip install ansible ansible-lint
 
   # Check ansible version
   - ansible --version
