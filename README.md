@@ -50,7 +50,7 @@ The subdirectory inside the bundle directory.
     conga_bundle_files_standalone: true
 
 Enables/disables standalone mode. When set to true the
-[aem-service](https://github.com/wcm-io-devops/ansible-aem-service)
+[wcm_io_devops.aem_service](https://github.com/wcm-io-devops/ansible-aem-service)
 dependency is enabled. Set this value to false when you have several
 aem-service dependencies in your play to avoid multiple AEM restarts.
 
@@ -60,7 +60,7 @@ This role depends on the
 [wcm_io_devops.conga_facts](https://github.com/wcm-io-devops/ansible-conga-facts) role
 for supplying the list of bundle files to deploy. In the standalone mode
 it also depends on the
-[aem-service](https://github.com/wcm-io-devops/ansible-aem-service) role
+[wcm_io_devops.aem_service](https://github.com/wcm-io-devops/ansible-aem-service) role
 for ensuring that the target AEM instance is started before calling the
 API.
 
