@@ -19,3 +19,6 @@ conga_bundle_files_target_data_dir: "data"
 #conga_bundle_files_owner:
 #conga_bundle_files_group:
 #conga_bundle_files_mode:
+
+# Enables/disables standalone mode
+conga_bundle_files_standalone: true
