@@ -13,15 +13,15 @@ This role requires Ansible 2.0 or higher.
 
 Available variables are listed below, along with default values:
 
-    conga_bundle_files_aem_user: admin
+    conga_bundle_files_aem_user: "{{ conga_config.quickstart.adminUser.username | default('admin')}}"
 
 The username to use for the Bundle API call.
 
-    conga_bundle_files_aem_password: admin
+    conga_bundle_files_aem_password: "{{ conga_config.quickstart.adminUser.password | default('admin')}}"
 
 The password to use for the Bundle API call.
 
-    conga_bundle_files_aem_port: 4502
+    conga_bundle_files_aem_port: "{{ conga_config.quickstart.port | default(4502) }}"
 
 The port of the target AEM instance. This can be set
 explicitly, but the idea is to reuse it from a CONGA role in which the
