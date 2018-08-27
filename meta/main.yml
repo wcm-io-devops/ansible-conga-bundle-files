@@ -25,9 +25,12 @@ galaxy_info:
 
 allow_duplicates: yes
 dependencies:
-  - wcm_io_devops.conga_facts
+  - { name: wcm_io_devops.conga_facts,
+      version: 1.0.0
+  }
   - { name: wcm_io_devops.aem_service,
+      version: 1.0.0,
       aem_service_port: "{{ conga_bundle_files_aem_port }}",
       aem_service_name: "{{ aem_cms_service_name }}",
       when: conga_bundle_files_standalone == true
-    }
+  }
