@@ -18,7 +18,8 @@
 # set the target path of the files
 - name: "Set bundle path"
   set_fact:
-    _bundle_data_target_path: "{{ conga_bundle_files_target_dir_prefix }}{{ bundle_json.json.data[0].id }}/{{ conga_bundle_files_target_data_dir }}"
+    _bundle_data_target_path: "{{ conga_bundle_files_target_dir_prefix }}{{ bundle_json.json.data[0].id }}\
+                              /{{ conga_bundle_files_target_data_dir }}"
 
 # copy the bundle file to the target system
 - name: Copy CONGA bundle file to the target system.
