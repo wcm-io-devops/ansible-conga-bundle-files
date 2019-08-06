@@ -26,7 +26,7 @@ galaxy_info:
 allow_duplicates: yes
 dependencies:
   - { name: wcm_io_devops.conga_facts,
-      version: 1.0.0
+      version: 1.0.1
   }
   - { name: wcm_io_devops.aem_service,
       version: 1.1.0,
