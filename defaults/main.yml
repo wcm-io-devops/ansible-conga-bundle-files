@@ -3,9 +3,9 @@ conga_bundle_files_aem_user: "{{ conga_config.quickstart.adminUser.username | de
 conga_bundle_files_aem_password: "{{ conga_config.quickstart.adminUser.password | default('admin')}}"
 
 # The port of the target AEM instance
-conga_bundle_files_aem_port: "{{ conga_config.quickstart.port | default(4502) }}"
+conga_bundle_files_aem_service_port: "{{ conga_config.quickstart.port | default(4502) }}"
 # The prefix of the bundle API call made to retrieve the bundle id and thus the target path where to deploy the file.
-conga_bundle_files_aem_api_prefix: "http://localhost:{{ conga_bundle_files_aem_port }}/system/console/bundles/"
+conga_bundle_files_aem_api_prefix: "http://localhost:{{ conga_bundle_files_aem_service_port }}/system/console/bundles/"
 
 # Timeout in seconds for the AEM api call
 conga_bundle_files_aem_api_timeout: 60
