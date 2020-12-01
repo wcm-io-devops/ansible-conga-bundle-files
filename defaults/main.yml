@@ -2,6 +2,9 @@
 conga_bundle_files_aem_user: "{{ conga_config.quickstart.adminUser.username | default('admin')}}"
 conga_bundle_files_aem_password: "{{ conga_config.quickstart.adminUser.password | default('admin')}}"
 
+# The name of the aem service, required in order to restart the instance after a change
+conga_bundle_files_aem_service_name: "{{ aem_cms_service_name }}"
+
 # The port of the target AEM instance
 conga_bundle_files_aem_service_port: "{{ conga_config.quickstart.port | default(4502) }}"
 # The prefix of the bundle API call made to retrieve the bundle id and thus the target path where to deploy the file.
