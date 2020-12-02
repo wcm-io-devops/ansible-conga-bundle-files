@@ -32,7 +32,7 @@
   register: _conga_bundle_files_result
   notify: "{{ conga_bundle_files_handlers | default(omit) }}"
 
-- name: Restart AEM when bundle file(s) changed.
+- name: Restart AEM when bundle file(s) changed. # noqa 503
   import_role:
     name: wcm_io_devops.aem_service
   vars:
