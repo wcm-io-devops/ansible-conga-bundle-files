@@ -29,14 +29,11 @@
     owner: "{{ conga_bundle_files_owner | default(omit) }}"
     group: "{{ conga_bundle_files_group | default(omit) }}"
     mode: "{{ conga_bundle_files_mode | default(omit) }}"
-  register: _conga_bundle_files_result
+  register: _conga_bundle_files_bundle_file_result
   notify: "{{ conga_bundle_files_handlers | default(omit) }}"
 
-- name: Restart AEM when bundle file(s) changed. # noqa 503
-  import_role:
-    name: wcm_io_devops.aem_service
-  vars:
-    aem_service_name: "{{ conga_bundle_files_aem_service_name | mandatory }}"
-    aem_service_port: "{{ conga_bundle_files_aem_service_port | mandatory }}"
-    aem_service_state: restarted
-  when: _conga_bundle_files_result.changed
+- name: "Set 'conga_bundle_files_changed' to true when changed."
+  set_fact:
+    conga_bundle_files_changed: true
+  changed_when: true
+  when: _conga_bundle_files_bundle_file_result.changed

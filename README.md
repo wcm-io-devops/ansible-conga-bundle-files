@@ -58,12 +58,23 @@ the bundle id retrieved from the bundle API call.
 
 The subdirectory inside the bundle directory.
 
+    conga_bundle_files_handlers: []
+
+The handlers to notify when a bundle file has changed.
+
     conga_bundle_files_standalone: true
 
 Enables/disables standalone mode. When set to true the
 [wcm_io_devops.aem_service](https://github.com/wcm-io-devops/ansible-aem-service)
 dependency is enabled. Set this value to false when you have several
 aem-service dependencies in your play to avoid multiple AEM restarts.
+
+# Result facts
+
+    conga_bundle_files_changed
+
+This fact has the value `true` when at least one deployment of a bundle
+file resulted in a change.
 
 ## Dependencies
 
