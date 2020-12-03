@@ -69,7 +69,7 @@ Enables/disables standalone mode. When set to true the
 dependency is enabled. Set this value to false when you have several
 aem-service dependencies in your play to avoid multiple AEM restarts.
 
-# Result facts
+## Result facts
 
     conga_bundle_files_changed
 
