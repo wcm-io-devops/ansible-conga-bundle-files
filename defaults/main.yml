@@ -2,10 +2,13 @@
 conga_bundle_files_aem_user: "{{ conga_config.quickstart.adminUser.username | default('admin')}}"
 conga_bundle_files_aem_password: "{{ conga_config.quickstart.adminUser.password | default('admin')}}"
 
+# The name of the aem service, required in order to restart the instance after a change
+conga_bundle_files_aem_service_name: "{{ aem_cms_service_name }}"
+
 # The port of the target AEM instance
-conga_bundle_files_aem_port: "{{ conga_config.quickstart.port | default(4502) }}"
+conga_bundle_files_aem_service_port: "{{ conga_config.quickstart.port | default(4502) }}"
 # The prefix of the bundle API call made to retrieve the bundle id and thus the target path where to deploy the file.
-conga_bundle_files_aem_api_prefix: "http://localhost:{{ conga_bundle_files_aem_port }}/system/console/bundles/"
+conga_bundle_files_aem_api_prefix: "http://localhost:{{ conga_bundle_files_aem_service_port }}/system/console/bundles/"
 
 # Timeout in seconds for the AEM api call
 conga_bundle_files_aem_api_timeout: 60
@@ -14,6 +17,9 @@ conga_bundle_files_aem_api_timeout: 60
 conga_bundle_files_target_dir_prefix: "crx-quickstart/launchpad/felix/bundle"
 # The subdirectory inside the bundle directory.
 conga_bundle_files_target_data_dir: "data"
+
+# The handlers to register when a bundle file has changed
+conga_bundle_files_handlers: []
 
 # Owner, group and mode of the copied files
 #conga_bundle_files_owner:

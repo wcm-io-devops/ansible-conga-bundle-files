@@ -26,7 +26,13 @@ The username to use for the Bundle API call.
 
 The password to use for the Bundle API call.
 
-    conga_bundle_files_aem_port: "{{ conga_config.quickstart.port | default(4502) }}"
+    conga_bundle_files_aem_service_name: "{{ aem_cms_service_name }}"
+
+The name of the aem service, required in order to restart the instance.
+This must be set explicitely when not running along with the
+`wcm_io_devops.aem_cms` role.
+
+    conga_bundle_files_aem_service_port: "{{ conga_config.quickstart.port | default(4502) }}"
 
 The port of the target AEM instance. This can be set
 explicitly, but the idea is to reuse it from a CONGA role in which the
@@ -34,7 +40,7 @@ port is defined (e.g.
 [`aem-cms`](https://github.com/wcm-io-devops/conga-aem-definitions/blob/develop/conga-aem-definitions/src/main/roles/aem-cms.yaml))
 to make it automatically work for both author and publisher instances.
 
-    conga_bundle_files_aem_api_prefix: "http://localhost:{{ conga_bundle_files_aem_port }}/system/console/bundles/"
+    conga_bundle_files_aem_api_prefix: "http://localhost:{{ conga_bundle_files_aem_service_port }}/system/console/bundles/"
 
 The prefix of the bundle API call made to retrieve the bundle id and
 thus the target path where to deploy the file.
@@ -52,12 +58,23 @@ the bundle id retrieved from the bundle API call.
 
 The subdirectory inside the bundle directory.
 
+    conga_bundle_files_handlers: []
+
+The handlers to notify when a bundle file has changed.
+
     conga_bundle_files_standalone: true
 
 Enables/disables standalone mode. When set to true the
 [wcm_io_devops.aem_service](https://github.com/wcm-io-devops/ansible-aem-service)
 dependency is enabled. Set this value to false when you have several
 aem-service dependencies in your play to avoid multiple AEM restarts.
+
+## Result facts
+
+    conga_bundle_files_changed
+
+This fact has the value `true` when at least one deployment of a bundle
+file resulted in a change.
 
 ## Dependencies
 

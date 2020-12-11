@@ -29,4 +29,11 @@
     owner: "{{ conga_bundle_files_owner | default(omit) }}"
     group: "{{ conga_bundle_files_group | default(omit) }}"
     mode: "{{ conga_bundle_files_mode | default(omit) }}"
+  register: _conga_bundle_files_bundle_file_result
   notify: "{{ conga_bundle_files_handlers | default(omit) }}"
+
+- name: "Set 'conga_bundle_files_changed' to true when changed." # noqa 503
+  set_fact:
+    conga_bundle_files_changed: true
+  changed_when: true
+  when: _conga_bundle_files_bundle_file_result.changed
