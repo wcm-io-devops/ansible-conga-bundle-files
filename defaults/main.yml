@@ -1,3 +1,4 @@
+---
 # Username and password to use for query bundle api
 conga_bundle_files_aem_user: "{{ conga_config.quickstart.adminUser.username | default('admin')}}"
 conga_bundle_files_aem_password: "{{ conga_config.quickstart.adminUser.password | default('admin')}}"
@@ -13,7 +14,7 @@ conga_bundle_files_aem_api_prefix: "http://localhost:{{ conga_bundle_files_aem_s
 # Timeout in seconds for the AEM api call
 conga_bundle_files_aem_api_timeout: 60
 
-#The prefix of the bundle target path. This value is concatenated with the bundle id retrieved from the bundle API call.
+# The prefix of the bundle target path. This value is concatenated with the bundle id retrieved from the bundle API call.
 conga_bundle_files_target_dir_prefix: "crx-quickstart/launchpad/felix/bundle"
 # The subdirectory inside the bundle directory.
 conga_bundle_files_target_data_dir: "data"
@@ -22,9 +23,9 @@ conga_bundle_files_target_data_dir: "data"
 conga_bundle_files_handlers: []
 
 # Owner, group and mode of the copied files
-#conga_bundle_files_owner:
-#conga_bundle_files_group:
-#conga_bundle_files_mode:
+# conga_bundle_files_owner:
+# conga_bundle_files_group:
+# conga_bundle_files_mode:
 
 # Enables/disables standalone mode
 conga_bundle_files_standalone: true
