@@ -1,3 +1,4 @@
+---
 galaxy_info:
   role_name: conga_bundle_files
   author: Tobias Richter
@@ -8,17 +9,17 @@ galaxy_info:
   min_ansible_version: 2.7
 
   platforms:
-  - name: Ubuntu
-    versions:
-    - trusty
-    - xenial
-  - name: Debian
-    versions:
-    - jessie
-    - stretch
-  - name: EL
-    versions:
-    - 7
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+    - name: Debian
+      versions:
+        - jessie
+        - stretch
+    - name: EL
+      versions:
+        - 7
 
   galaxy_tags:
     - wcmio

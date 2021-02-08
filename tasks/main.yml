@@ -1,3 +1,4 @@
+---
 - name: Setup bundle_file list and result fact.
   set_fact:
     _bundle_files: "{{ bundle_files | default(conga_bundle_files) }}"
