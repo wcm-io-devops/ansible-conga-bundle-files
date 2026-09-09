@@ -23,7 +23,7 @@
                               /{{ conga_bundle_files_target_data_dir }}"
 
 - name: "Ensure target directory exists"
-  file:
+  ansible.builtin.file:
     path: "{{ conga_bundle_files_base_path }}/{{ _bundle_data_target_path }}"
     state: directory
     owner: "{{ conga_bundle_files_owner | default(omit) }}"
