@@ -50,9 +50,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ env.ROLE_NAME }}/tests/requirements
-          key: >-
-            ${{ runner.os }}-roles-${{ matrix.ANSIBLE_VERSION }}-
-            ${{ hashFiles('wcm_io_devops.conga_bundle_files/tests/requirements.yml') }}
+          key: ${{ runner.os }}-roles-${{ matrix.ANSIBLE_VERSION }}-${{ hashFiles(format('{0}/tests/requirements.yml', env.ROLE_NAME)) }}
 
       - name: Create ansible.cfg
         run: "printf '[defaults]\nroles_path=./tests/requirements/:../' > ansible.cfg"
