@@ -1,5 +1,5 @@
 exclude_paths:
-  - ./tests/requirements
+  - tests/requirements/
 
 skip_list:
- - yaml
+  - yaml

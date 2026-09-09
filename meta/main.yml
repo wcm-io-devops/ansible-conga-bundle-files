@@ -7,7 +7,7 @@ galaxy_info:
   company: pro!vision
   issue_tracker_url: https://wcm-io.atlassian.net
   license: Apache
-  min_ansible_version: 2.7
+  min_ansible_version: "2.10"
 
   platforms:
     - name: Ubuntu
@@ -21,12 +21,12 @@ galaxy_info:
         - buster
     - name: EL
       versions:
-        - 7
+        - all
 
   galaxy_tags:
     - wcmio
 
-allow_duplicates: yes
+allow_duplicates: true
 dependencies:
   - name: wcm_io_devops.conga_facts
     version: 1.1.0
