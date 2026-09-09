@@ -23,11 +23,12 @@ conga_bundle_files_target_data_dir: "data"
 # The handlers to register when a bundle file has changed
 conga_bundle_files_handlers: []
 
-# Owner, group and mode of the copied files
+# Owner and group of the copied files
 # conga_bundle_files_owner:
 # conga_bundle_files_group:
 # conga_bundle_files_mode:
-# conga_bundle_dir_mode:
+# Mode of the created directory
+# conga_bundle_files_dir_mode:
 
 # Enables/disables standalone mode
 conga_bundle_files_standalone: true
