@@ -9,5 +9,6 @@ rules:
     allowed-values: ['true', 'false', 'yes', 'no']
 
 ignore: |
+  .ansible/
   .travis.yml
   tests/requirements/

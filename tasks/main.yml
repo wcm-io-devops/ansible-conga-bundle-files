@@ -1,11 +1,11 @@
 ---
 - name: Setup bundle_file list and result fact.
-  set_fact:
+  ansible.builtin.set_fact:
     _bundle_files: "{{ bundle_files | default(conga_bundle_files) }}"
     conga_bundle_files_changed: false
 
 - name: "Deploy AEM bundle files for role: {{ conga_role }}"
-  include_tasks: deploy_bundle_file.yml
-  with_items: "{{ _bundle_files }}"
+  ansible.builtin.include_tasks: deploy_bundle_file.yml
+  loop: "{{ _bundle_files }}"
   loop_control:
     loop_var: _bundle_file
